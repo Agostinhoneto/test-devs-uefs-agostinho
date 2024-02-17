@@ -10,27 +10,12 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    /*
-    public function test_example(): void
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-    */
-
-    use RefreshDatabase;
-
-
     public function test_create_user()
     {
         $data = [
             'name' => 'Test User',
-            'email' => 'testinh@example.com',
-            'password' => bcrypt('password123'),
+            'email' => 'euss@defff.coddmdd',  //alterar sempre que rodar o teste.
+            'password' => bcrypt('pdassword123'),
         ];
  
         $response = $this->post(route('users.store'), $data);

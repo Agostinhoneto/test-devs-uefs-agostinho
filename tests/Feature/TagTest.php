@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -17,4 +18,14 @@ class TagTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+
+    public function test_create_tag()
+    {
+        $response = Tag::factory()->create();
+        $this->refreshApplication();
+        $newTag = Tag::factory()->create();
+
+    }
+
 }

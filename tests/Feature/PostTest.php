@@ -9,44 +9,20 @@ use Tests\TestCase;
 
 class PostTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-    /*
-    public function test_example(): void
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
-    }
-    */
-
-    use RefreshDatabase;
-    /*
-    public function test_can_create_post()
+    public function test_create_post()
     {
         $data = [
-            'user_id' => 1,
+            'user_id' => 2,
             'title' => 'Teste do primeiro Post',
             'content' => 'testando o content.',
         ];
-       // dd($data);
-        $response = $this->post(route('posts.store'), $data);
-
-        $response->assertStatus(201);
-        $this->assertDatabaseHas('posts', $data);
+     
+        $response = $this->post(route('posts.store'), $data);        
+        $response->assertStatus(200);
     }
-
-    public function test_can_read_post()
-    {
-        $post = Post::factory()->create();
-
-        $response = $this->get(route('posts.show', $post->id));
-
-        $response->assertStatus(200)
-            ->assertJson(['title' => $post->title, 'content' => $post->content]);
-    }
-
+   
+    /*
     public function test_can_update_post()
     {
         $post = Post::factory()->create();
