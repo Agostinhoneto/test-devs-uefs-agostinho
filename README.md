@@ -1,43 +1,98 @@
-Teste Técnico para a vaga de Engenheiro de Software no projeto UEFS - Avansys/ACP Group
-Este desafio é para a posição de Engenheiro de Software e envolve a criação de uma API Restful usando PHP, o framework Laravel (versão 8 ou superior), o Sistema de Gerenciamento de Banco de Dados (SGBD) à sua escolha e Docker. O prazo para este desafio é de 5 dias, com a entrega dos códigos fonte via GitHub para análise.
-Faça um fork do repositório, aplique a solução e envie para avaliação.
+# API Laravel 10 - Teste Técnico  Projeto Teste UEFS.
 
-Critérios de Avaliação
-Conhecimento e uso de recursos do Laravel.
-Familiaridade com Docker e Docker Compose.
-Organização e documentação do código.
-Competência em lógica de programação e nível de abstração.
-Aplicação dos princípios do conceito SOLID.
-Utilização de testes unitários (PHPUnit ou PEST).
-Adesão aos padrões PSR.
-Implementação eficaz de uma API Restful.
-Utilização adequada dos recursos do SGBD escolhido.
-Tarefas
-Desenvolva uma API em Laravel que inclua o CRUD para:
+## Instalação
 
-Usuários
-Posts
-Tags
+ 1. Configuração de ambiente.
 
-As regras de estruturação da modelagem são:
+ - Sistema Operacional deve ter instalado o PHP na versão ^8.1.
 
-O usuário (users) possui diferentes postagens (posts).
-As postagens (posts) possuem várias palavras-chave (tags).
-Implemente os seguintes endpoints com operações CRUD para:
+2. Clone o repositório
+   ```bash
+   git clone https://github.com/Agostinhoneto/teste-uefs.git
 
-Usuários
-Posts
-Tags
-NOTA: As rotas devem ser acessadas com o prefixo /api. Por exemplo: /api/posts
-É essencial o desenvolvimento de um Dockerfile e um docker-compose para garantir que o projeto seja executado na máquina do avaliador.
-É de suma importância a descrição detalhada dos endpoints e funcionalidades para que o avaliador possa testar o projeto em sua máquina.
+ 2.1 - execute o comando na pasta que clonou o projeto :  cd teste-uefs
 
-Opcionais (Não obrigatórios, mas recomendados)
-Implementação de testes unitários.
-Uso de Swagger ou Scribe Documentation.
-Criação de uma interface gráfica simples para exposição dos dados (React, Vue ou Bootstrap).
-Após a avaliação técnica, em caso de aprovação, entraremos em contato para uma conversa técnica sobre a implementação. Se o candidato não for aprovado, forneceremos um retorno com o aviso e o motivo.
+ 2.2 -  execute o comando: composer install
+
+ 2.3 -  execute o comando para alterar o arquivo : cp .env.example .env renomear para .env
+
+ 2.4 -  execute o comando : php artisan key:generate
+
+3. **Configuração da Base de Dados:**
+   - Instruções para configurar e migrar o banco de dados.
+
+## Configuração da Base de Dados
+
+3.1 - Configure o arquivo `.env` com as informações do banco de dados nesse caso usei o Mysql.
+
+ - DB_CONNECTION=mysql
+ - DB_HOST=127.0.0.1
+ - DB_PORT=3306
+ - DB_DATABASE=teste-uefs
+ - DB_USERNAME=
+ - DB_PASSWORD=
+
+3.2 - execute o comando :  php artisan migrate.
+
+3.3 - Para rodar os seeders de todas as tabelas : users ,posts,tags.
+ php artisan db:seed
+
+3.4 - Para rodar a aplicação exceute :  php artisan serve
+
+### 5 - Endpoints
+- para rodar os Endpoints eu utilizei a ferramenta Postman ou Insomnia.
+---------------------------------------------------------------
+
+Inicio
+
+### `http://localhost:8000/api/` - para retornar que API está funcionando.
+
+#######################################################################################################
+
+Users
+### `http://localhost:8000/api/users`
+
+- **GET** :  `http://localhost:8000/api/users/index` - Obter a lista de todos os users.
+- **POST**:  `http://localhost:8000/api/users/store` -  Inserir users.
+- **GET** : `http://localhost:8000/api/users/show/{id}` - Obter um users.
+- **PUT** : `http://localhost:8000/api/users/update/{id}` - Atualiza um users.
+- **Delete** : `http://localhost:8000/api/users/destroy/{id}` - deleta um users.`
+
+#######################################################################################################
+
+### `http://localhost:8000/api/post`
+
+Posts.
+- **GET**: `http://localhost:8000/api/post/index` - listar Posts .
+- **POST**: `http://localhost:8000/api/post/store` - Cadastrar Posts.
+- **GET** : `http://localhost:8000/api/post/show/{id}` - Obter um Post.
+- **PUT** : `http://localhost:8000/api/post/update/{id}` - Atualiza um Post.
+- **Delete** : `http://localhost:8000/api/post/destroy/{id}` - deleta um Post.
+
+Tags.
+### `http://localhost:8000/api/tags`
+
+- **GET**: `http://localhost:8000/api/tags/index` - listar tags .
+- **POST**: `http://localhost:8000/api/tags/store` - Criar uma nova tags 
+- **GET** : `http://localhost:8000/api/tags/show/{id}` - Obter um tags.
+- **PUT** : `http://localhost:8000/api/tags/update/{id}` - Atualiza um tags.
+- **Delete** : `http://localhost:8000/api/tags/destroy/{id}` - deleta um tags.
 
 
-Boa sorte!
-Equipe de Desenvolvimento AVANSYS/ACP - Projeto UEFS
+
+## 4 Guia de Testes para Laravel
+
+## Requisitos
+
+- PHP >= 8.0
+- Composer
+- MySQL ou outro banco de dados suportado pelo Laravel
+
+## 
+
+1. **Rodando todos os teste:**
+
+# .\vendor\bin\phpunit
+
+# .\vendor\bin\phpunit [NomeDaClasse]
+
