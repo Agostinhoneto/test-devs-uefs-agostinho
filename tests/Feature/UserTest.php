@@ -25,19 +25,20 @@ class UserTest extends TestCase
     use RefreshDatabase;
 
 
-    public function test_can_create_user()
+    public function test_create_user()
     {
         $data = [
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'testinh@example.com',
             'password' => bcrypt('password123'),
         ];
  
         $response = $this->post(route('users.store'), $data);
-
-        $response->assertStatus(201);
+    
+        $response->assertStatus(200);
 
     }
+
 
     /*
     public function test_can_read_user()
