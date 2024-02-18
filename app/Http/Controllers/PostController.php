@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\HttpStatusCodes;
 use App\Helpers\Messages;
+use App\Http\Requests\StorePostRequest;
 use App\Services\PostsService;
 use Exception;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ class PostController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         $result['data'] = $this->postService->createPost(
             $request->user_id,

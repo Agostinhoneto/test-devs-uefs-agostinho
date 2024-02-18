@@ -43,7 +43,6 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $result['data'] = $this->userService->createUser(
-            $request->id,
             $request->name,
             $request->email,
             $request->password,

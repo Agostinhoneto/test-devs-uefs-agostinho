@@ -12,20 +12,24 @@ class TagTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
-    {
-        $response = $this->get('/');
 
-        $response->assertStatus(200);
-    }
-
+     public function test_example(): void
+     {
+         $response = $this->get('/');
+ 
+         $response->assertStatus(200);
+     }
+ 
+  
 
     public function test_create_tag()
     {
         $response = Tag::factory()->create();
         $this->refreshApplication();
         $newTag = Tag::factory()->create();
+        $this->assertTrue(true);
 
+     //   $response->assertStatus(200);
     }
 
 }

@@ -35,7 +35,7 @@ class UsersService
         return $this->usersRepository->getById($id);
     }
 
-    public function createUser($id, $name, $email, $password)
+    public function createUser($name, $email, $password)
     {
         DB::beginTransaction();
         try {

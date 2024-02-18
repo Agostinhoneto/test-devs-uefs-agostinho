@@ -14,7 +14,7 @@ class PostTest extends TestCase
     {
         $data = [
             'user_id' => 2,
-            'title' => 'Teste do primeiro Post',
+            'title' => 'Testedddd do primeiro Post',
             'content' => 'testando o content.',
         ];
      

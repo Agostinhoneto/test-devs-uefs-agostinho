@@ -14,7 +14,7 @@ class UserTest extends TestCase
     {
         $data = [
             'name' => 'Test User',
-            'email' => 'euss@defff.coddmdd',  //alterar sempre que rodar o teste.
+            'email' => 'euss@defddddfddfd.coddmdd',  //alterar sempre que rodar o teste.
             'password' => bcrypt('pdassword123'),
         ];
  
@@ -23,21 +23,11 @@ class UserTest extends TestCase
         $response->assertStatus(200);
 
     }
-
-
-    /*
-    public function test_can_read_user()
-    {
-        $user = User::factory()->create();
-
-        $response = $this->get(route('users.show', $user->id));
-
-        $response->assertStatus(200)
-            ->assertJson(['email' => $user->email]);
-    }
-
+   /*
     public function test_can_update_user()
     {
+       // $userUpdate = User::find($id);
+
         $user = User::factory()->create();
         $data = ['name' => 'Updated Name'];
 
