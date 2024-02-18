@@ -14,14 +14,45 @@ class UserTest extends TestCase
     {
         $data = [
             'name' => 'Test User',
-            'email' => 'teste@email.com',  //alterar sempre que rodar o Teste.
+            'email' => 'teste@emddddadddddddddddddddddssssddddil.com',  //alterar sempre que rodar o Teste.
             'password' => bcrypt('pdassword123'),
         ];
- 
-        $response = $this->post(route('users.store'), $data);
-    
+        $response = $this->post(route('users.store'), $data); 
         $response->assertStatus(200);
+    }
 
+    public function test_can_read_user()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->get(route('users.show', $user->id));
+
+        $response->assertStatus(200);
+    }
+
+
+    public function test_can_update_user()
+    {
+        $user = User::factory()->create();
+        $data = [
+            'name' => 'Updated Name',
+            'email' => 'teste12345@tesdssssstssse.com', //alterar sempre que rodar o Teste.
+            'password' => bcrypt('pdassword123'),
+
+        ];
+
+        $response = $this->put(route('users.update', $user->id), $data);
+        $response->assertStatus(200);
+    }
+
+  
+    public function test_can_delete_user()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->delete(route('users.destroy', $user->id));
+
+        $response->assertStatus(200);
     }
   
 }
