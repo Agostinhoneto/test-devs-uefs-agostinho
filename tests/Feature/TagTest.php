@@ -19,17 +19,13 @@ class TagTest extends TestCase
  
          $response->assertStatus(200);
      }
- 
-  
-
+     
     public function test_create_tag()
     {
         $response = Tag::factory()->create();
         $this->refreshApplication();
         $newTag = Tag::factory()->create();
         $this->assertTrue(true);
-
-     //   $response->assertStatus(200);
     }
 
 }

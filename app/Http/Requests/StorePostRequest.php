@@ -23,8 +23,8 @@ class StorePostRequest extends FormRequest
     {
         return [
             'user_id' => 'required',
-            'title' => 'required|unique:posts|max:255',
-            'content' => 'required',
+            'title' => 'required|max:255',
+            'content' => 'required|max:255',
         ];
     }
 }

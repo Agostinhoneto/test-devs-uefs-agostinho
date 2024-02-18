@@ -44,7 +44,6 @@ class TagController extends Controller
 
     public function store(StoreTagRequest $request)
     {
-
         $result['data'] = $this->tagService->createTag(
             $request->id,
             $request->name,
