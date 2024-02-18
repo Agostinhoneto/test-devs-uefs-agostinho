@@ -90,7 +90,7 @@ Tags.
 
 ## 
 
-1. **Rodando todos os teste:**
+1. **Rodando todos os testes:**
 
 # .\vendor\bin\phpunit
 

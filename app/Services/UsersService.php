@@ -39,7 +39,7 @@ class UsersService
     {
         DB::beginTransaction();
         try {
-            $data = $this->usersRepository->salvar($id, $name, $email, $password);
+            $data = $this->usersRepository->salvar($name, $email, $password);
             DB::commit();
             return $data;
         } catch (\Exception $e) {

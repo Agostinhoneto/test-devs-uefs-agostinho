@@ -7,7 +7,6 @@ use App\Helpers\Messages;
 use App\Http\Requests\StoreUserRequest;
 use App\Services\UsersService;
 use Exception;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -52,8 +51,8 @@ class UserController extends Controller
         return response()->json([Messages::SAVE_MESSAGE, HttpStatusCodes::OK, $result]);
     }
 
-    public function update(Request $request, $id)
-    {
+    public function update(StoreUserRequest $request, $id)
+    {  
         $result['data'] = $this->userService->updateUser(
             $request->id,
             $request->name,

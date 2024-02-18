@@ -22,7 +22,7 @@ class UsersRepository
     }
 
     
-    public function salvar($id, $name, $email,$password)
+    public function salvar($name, $email,$password)
     {
         try {
             $user = new User();
