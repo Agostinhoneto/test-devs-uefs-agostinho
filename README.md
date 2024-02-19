@@ -8,7 +8,7 @@
 
 2. Clone o repositório
    ```bash
-   git clone https://github.com/Agostinhoneto/teste-uefs.git
+   git clone https://github.com/Agostinhoneto/test-devs-uefs-agostinho
 
  2.1 - execute o comando na pasta que clonou o projeto :  cd teste-uefs
 
