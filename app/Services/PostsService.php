@@ -60,8 +60,8 @@ class PostsService
     {
         DB::beginTransaction();
         try {
-            DB::commit();
             $user = $this->postsRepository->delete($id);
+            DB::commit();
         } catch (Exception $e) {
             DB::rollback();
             throw new \Exception($e);

@@ -62,13 +62,15 @@ class TagsService
     public function destroy($id){
         DB::beginTransaction();
         try{
-            DB::commit();
             $user = $this->tagsRepository->delete($id);
+            DB::commit();
+
         }
         catch(Exception $e){
-            DB::roolBack();
             Log::info($e->getMessage());
+            DB::rollback();
             throw new InvalidArgumentException('Não pode ser deletado');
+            DB::roolBack();
         }
         return $user;
     }
