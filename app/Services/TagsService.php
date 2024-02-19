@@ -67,10 +67,8 @@ class TagsService
 
         }
         catch(Exception $e){
-            Log::info($e->getMessage());
             DB::rollback();
-            throw new InvalidArgumentException('Não pode ser deletado');
-            DB::roolBack();
+            throw new \Exception($e);
         }
         return $user;
     }
