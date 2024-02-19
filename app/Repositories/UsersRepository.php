@@ -40,6 +40,7 @@ class UsersRepository
     public function update($id,$name,$email,$password)
     {
         try {
+            if($id != null ){
             $user = User::find($id);
             $user->id = $id;
             $user->name = $name;
@@ -47,6 +48,7 @@ class UsersRepository
             $user->password  = $password;
             $user->update();
             return $user->fresh();
+            }
         } catch (\Exception $e) {
             throw new \Exception($e);
         }

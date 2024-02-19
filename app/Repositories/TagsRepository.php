@@ -34,12 +34,13 @@ class TagsRepository
     public function update($id, $name)
     {
         try {
-
+            if($id != null ){
             $tag = Tag::find($id);
             $tag->id = $id;
             $tag->name = $name;
             $tag->update();
             return $tag->fresh();
+            }
         } catch (\Exception $e) {
             throw new \Exception($e);
         }

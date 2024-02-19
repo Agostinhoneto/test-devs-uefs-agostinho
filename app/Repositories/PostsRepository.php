@@ -40,6 +40,7 @@ class PostsRepository
     {
 
         try {
+            if($id != null ){
             $post = Post::find($id);
             $post->user_id = $user_id;      
             $post->title = $title;
@@ -47,6 +48,7 @@ class PostsRepository
             $post->update();
             $post->tags()->sync($tags);
             return $post;
+            }
         } catch (\Exception $e) {
             throw new \Exception($e);
         }
