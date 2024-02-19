@@ -19,7 +19,7 @@ class TagsRepository
     }
 
     
-    public function salvar($id, $name)
+    public function salvar($name)
     {
         try {
             $tag = new Tag();
@@ -48,10 +48,14 @@ class TagsRepository
 
     public function delete($id)
     {
-        if($id != null ){
-            $tag = $this->tag->findOrFail($id);
-            $tag->delete();
-        } 
-        return $tag;  
+        try {
+            if($id != null ){
+                $tag = $this->tag->findOrFail($id);
+                $tag->delete();
+                return $tag;
+            } 
+            } catch (\Exception $e) {
+                throw new \Exception($e);
+            }
     }
 }

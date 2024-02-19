@@ -58,8 +58,8 @@ class PostsRepository
     {
         if ($id != null) {
             $post = $this->post->findOrFail($id);
+            dd($post);
             $post->delete();
         }
-        return $post;
     }
 }

@@ -33,11 +33,11 @@ class TagsService
         return $this->tagsRepository->getById($id);
     }
 
-    public function createTag($id, $name)
+    public function createTag($name)
     {
         DB::beginTransaction();
         try {
-            $data = $this->tagsRepository->salvar($id, $name);
+            $data = $this->tagsRepository->salvar($name);
             DB::commit();
             return $data;
         } catch (\Exception $e) {

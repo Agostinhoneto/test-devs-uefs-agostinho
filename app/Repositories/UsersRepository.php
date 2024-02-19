@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Repositories;
+
 use App\Models\User;
 
 class UsersRepository
@@ -17,12 +18,13 @@ class UsersRepository
         return User::all();
     }
 
-    public function getById($id){
+    public function getById($id)
+    {
         return User::findOrFail($id)->email;
     }
 
-    
-    public function salvar($name, $email,$password)
+
+    public function salvar($name, $email, $password)
     {
         try {
             $user = new User();
@@ -37,17 +39,17 @@ class UsersRepository
         }
     }
 
-    public function update($id,$name,$email,$password)
+    public function update($id, $name, $email, $password)
     {
         try {
-            if($id != null ){
-            $user = User::find($id);
-            $user->id = $id;
-            $user->name = $name;
-            $user->email = $email;
-            $user->password  = $password;
-            $user->update();
-            return $user->fresh();
+            if ($id != null) {
+                $user = User::find($id);
+                $user->id = $id;
+                $user->name = $name;
+                $user->email = $email;
+                $user->password  = $password;
+                $user->update();
+                return $user->fresh();
             }
         } catch (\Exception $e) {
             throw new \Exception($e);
@@ -56,10 +58,14 @@ class UsersRepository
 
     public function delete($id)
     {
-        if($id != null ){
-            $user = $this->user->findOrFail($id);
-            $user->delete();
-        } 
-        return $user;  
+        try {
+            if ($id != null) {
+                $user = $this->user->findOrFail($id);
+                $user->delete();
+            }
+            return $user;
+        } catch (\Exception $e) {
+            throw new \Exception($e);
+        }
     }
 }
