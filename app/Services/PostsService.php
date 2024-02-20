@@ -60,12 +60,12 @@ class PostsService
     {
         DB::beginTransaction();
         try {
-            $user = $this->postsRepository->delete($id);
+            $post = $this->postsRepository->delete($id);
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
             throw new \Exception($e);
         }
-        return $user;
+        return $post;
     }
 }

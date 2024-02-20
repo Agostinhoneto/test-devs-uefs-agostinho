@@ -36,18 +36,18 @@ class PostsRepository
         }
     }
 
-    public function update($id,$user_id, $title, $content,$tags)
+    public function update($id, $user_id, $title, $content, $tags)
     {
 
         try {
-            if($id != null ){
-            $post = Post::find($id);
-            $post->user_id = $user_id;      
-            $post->title = $title;
-            $post->content  = $content;
-            $post->update();
-            $post->tags()->sync($tags);
-            return $post;
+            if ($id != null) {
+                $post = Post::find($id);
+                $post->user_id = $user_id;
+                $post->title = $title;
+                $post->content  = $content;
+                $post->update();
+                $post->tags()->sync($tags);
+                return $post;
             }
         } catch (\Exception $e) {
             throw new \Exception($e);
@@ -56,10 +56,13 @@ class PostsRepository
 
     public function delete($id)
     {
-        if ($id != null) {
-            $post = $this->post->findOrFail($id);
-            dd($post);
-            $post->delete();
+        try {
+            if ($id != null) {
+                $post = Post::findOrFail($id);
+                $post->delete();
+            }
+        } catch (\Exception $e) {
+            throw new \Exception($e);
         }
     }
 }
