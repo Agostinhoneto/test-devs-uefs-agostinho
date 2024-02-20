@@ -50,7 +50,7 @@ class TagsRepository
     {
         try {
             if($id != null ){
-                $tag = $this->tag->findOrFail($id);
+                $tag = Tag::findOrFail($id);
                 $tag->delete();
                 return $tag;
             } 

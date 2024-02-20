@@ -62,7 +62,7 @@ class TagsService
     public function destroy($id){
         DB::beginTransaction();
         try{
-            $user = $this->tagsRepository->delete($id);
+            $tag = $this->tagsRepository->delete($id);
             DB::commit();
 
         }
@@ -70,6 +70,6 @@ class TagsService
             DB::rollback();
             throw new \Exception($e);
         }
-        return $user;
+        return $tag;
     }
 }
