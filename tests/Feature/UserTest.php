@@ -21,7 +21,7 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_can_read_user()
+    public function test_read_user()
     {
         $user = User::factory()->create();
 
@@ -31,7 +31,7 @@ class UserTest extends TestCase
     }
 
 
-    public function test_can_update_user()
+    public function test_update_user()
     {
         $user = User::factory()->create();
         $data = [
@@ -46,7 +46,7 @@ class UserTest extends TestCase
     }
 
   
-    public function test_can_delete_user()
+    public function test_delete_user()
     {
         $user = User::factory()->create();
 

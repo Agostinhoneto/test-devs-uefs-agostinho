@@ -28,4 +28,34 @@ class TagTest extends TestCase
         $this->assertTrue(true);
     }
 
+    
+    public function test_read_tag()
+    {
+        $tag = Tag::factory()->create();
+
+        $response = $this->get(route('tags.show', $tag->id));
+
+        $response->assertStatus(200);
+    }
+    
+    public function test_update_tag()
+    {
+        $tag = Tag::factory()->create();
+        $data = [
+            'name' => 'Updated Name Test',
+         ];
+
+        $response = $this->put(route('tags.update', $tag->id), $data);
+        $response->assertStatus(200);
+    }
+
+    public function test_delete_tag()
+    {
+        $tag = Tag::factory()->create();
+
+        $response = $this->delete(route('tags.destroy', $tag->id));
+
+        $response->assertStatus(200);
+    }
+
 }
