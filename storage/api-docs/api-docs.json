@@ -22,91 +22,94 @@
                     }
                 }
             },
-          
-            "/api/user/store": {
-                "post": {
-                    "tags": [
-                        "User"
-                    ],
-                    "summary": "Create User",
-                    "operationId": "75a119bd9d0023e90ac8feb22bf59575",
-                    "requestBody": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "": {
-                                            "properties": {
-                                                "title": {
-                                                    "type": "string"
-                                                },
-                                                "content": {
-                                                    "type": "string"
-                                                }
-                                            },
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object",
-                                    "example": {
-                                        "title": "example title",
-                                        "content": "example content"
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "responses": {
-                        "200": {
-                            "description": "success",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Create Usersy",
+                "operationId": "75a119bd9d0023e90ac8feb22bf59575",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
                                         "properties": {
-                                            "id": {
-                                                "type": "number",
-                                                "example": 1
+                                            "name": {
+                                                "type": "string"
                                             },
-                                            "title": {
-                                                "type": "string",
-                                                "example": "title"
+                                            "email": {
+                                                "type": "string"
                                             },
-                                            "content": {
-                                                "type": "string",
-                                                "example": "content"
-                                            },
-                                            "updated_at": {
-                                                "type": "string",
-                                                "example": "2021-12-11T09:25:53.000000Z"
-                                            },
-                                            "created_at": {
-                                                "type": "string",
-                                                "example": "2021-12-11T09:25:53.000000Z"
+                                            "password": {
+                                                "type": "string"
                                             }
                                         },
                                         "type": "object"
                                     }
-                                }
-                            }
-                        },
-                        "400": {
-                            "description": "invalid",
-                            "content": {
-                                "application/json": {
-                                    "schema": {
-                                        "properties": {
-                                            "msg": {
-                                                "type": "string",
-                                                "example": "fail"
-                                            }
-                                        },
-                                        "type": "object"
-                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "name": "example name",
+                                    "email": "example@email.com",
+                                    "password": "12345678"
+
+                                    
                                 }
                             }
                         }
                     }
-                }                
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title"
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "example": "content"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "put": {
                 "tags": [
@@ -155,10 +158,10 @@
                                 "properties": {
                                     "": {
                                         "properties": {
-                                            "title": {
+                                            "name": {
                                                 "type": "string"
                                             },
-                                            "content": {
+                                            "email": {
                                                 "type": "string"
                                             }
                                         },
@@ -167,8 +170,8 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "title": "example title",
-                                    "content": "example content"
+                                    "name": "example title",
+                                    "email": "example content"
                                 }
                             }
                         }
