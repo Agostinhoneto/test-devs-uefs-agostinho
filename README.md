@@ -90,9 +90,20 @@ Tags.
 
 ## 
 
-1. **Rodando todos os testes:**
+1. **Rodando todas as classes dos testes Users,Posts e Tags:**
 
 # .\vendor\bin\phpunit
+
+
+## 5 Guia para acessar o Swagger e instalação.
+
+ - composer require "darkaonline/l5-swagger"
+ - abrir o config/app.php e adicionar o : L5Swagger\L5SwaggerServiceProvider::class
+ - php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+ - php artisan l5-swagger:generate
+
+
+1. (http://127.0.0.1:8000/api/documentation)
 
 
 
