@@ -53,8 +53,6 @@
                                     "name": "example name",
                                     "email": "example@email.com",
                                     "password": "12345678"
-
-                                    
                                 }
                             }
                         }
@@ -71,13 +69,17 @@
                                             "type": "number",
                                             "example": 1
                                         },
-                                        "title": {
+                                        "name": {
                                             "type": "string",
-                                            "example": "title"
+                                            "example": "name"
                                         },
-                                        "content": {
+                                        "email": {
                                             "type": "string",
-                                            "example": "content"
+                                            "example": "email@email.com"
+                                        },
+                                        "password": {
+                                            "type": "string",
+                                            "example": "123456"
                                         },
                                         "updated_at": {
                                             "type": "string",
@@ -115,42 +117,18 @@
                 "tags": [
                     "Users"
                 ],
-                "summary": "Editar Usuários",
-                "description": "Editado com sucesso",
-                "operationId": "putUsersEdit",
-                "responses": {
-                    "200": {
-                        "description": "Successful operation"
-                    },
-                    "400": {
-                        "description": "Bad request"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "Users"
-                ],
-                "summary": "Deletar Usuários",
-                "description": "Usuários deletados com sucesso",
-                "operationId": "deleteUsers",
-                "responses": {
-                    "200": {
-                        "description": "Successful operation"
-                    },
-                    "400": {
-                        "description": "Bad request"
-                    }
-                }
-            }
-        },
-        "/api/user/store": {
-            "post": {
-                "tags": [
-                    "User"
-                ],
-                "summary": "Create User",
+                "summary": "Update User",
                 "operationId": "75a119bd9d0023e90ac8feb22bf59575",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application/json": {
@@ -163,6 +141,9 @@
                                             },
                                             "email": {
                                                 "type": "string"
+                                            },
+                                            "password": {
+                                                "type": "string"
                                             }
                                         },
                                         "type": "object"
@@ -170,13 +151,86 @@
                                 },
                                 "type": "object",
                                 "example": {
-                                    "name": "example title",
-                                    "email": "example content"
+                                    "name": "example name",
+                                    "email": "example@email.com",
+                                    "password": "12345678"
                                 }
                             }
                         }
                     }
                 },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "email@email.com"
+                                        },
+                                        "password": {
+                                            "type": "string",
+                                            "example": "123456"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+               "/api/todo/get/{id}": {
+            "get": {
+                "tags": [
+                    "ToDo"
+                ],
+                "summary": "Get Detail Todo",
+                "operationId": "79780d7a6536643763e964e20fb983ab",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "success",
@@ -209,22 +263,23 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Deletar Usuários",
+                "description": "Usuários deletados com sucesso",
+                "operationId": "deleteUsers",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
                     },
                     "400": {
-                        "description": "invalid",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "msg": {
-                                            "type": "string",
-                                            "example": "fail"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "description": "Bad request"
                     }
                 }
             }
