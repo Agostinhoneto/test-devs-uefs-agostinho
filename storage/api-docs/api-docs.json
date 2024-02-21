@@ -21,7 +21,189 @@
                         "description": "Bad request"
                     }
                 }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get list of users",
+                "description": "Returns a list of users",
+                "operationId": "getUsersList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get list of users",
+                "description": "Returns a list of users",
+                "operationId": "getUsersList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get list of users",
+                "description": "Returns a list of users",
+                "operationId": "getUsersList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
             }
+        },
+      
+      
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get list of posts",
+                "description": "Returns a list of posts",
+                "operationId": "getPostsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }, 
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get list of posts",
+                "description": "Returns a list of posts",
+                "operationId": "getPostsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get list of posts",
+                "description": "Returns a list of posts",
+                "operationId": "getPostsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }, 
+             "delete": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get list of posts",
+                "description": "Returns a list of posts",
+                "operationId": "getPostsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }
+        },
+
+        "/api/tags": {
+            "get": {
+                "tags": [
+                    "Tags"
+                ],
+                "summary": "Get list of tags",
+                "description": "Returns a list of tags",
+                "operationId": "getTagsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Tags"
+                ],
+                "summary": "Criar Tags",
+                "description": "Returns a list of tags",
+                "operationId": "getTagsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            }, "put": {
+                "tags": [
+                    "Tags"
+                ],
+                "summary": "Editar Tags",
+                "description": "Returns a list of tags",
+                "operationId": "getTagsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },"delete": {
+                "tags": [
+                    "Tags"
+                ],
+                "summary": "Criar Tags",
+                "description": "Returns a list of tags",
+                "operationId": "getTagsList",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                }
+            },
         }
     }
+    
 }
