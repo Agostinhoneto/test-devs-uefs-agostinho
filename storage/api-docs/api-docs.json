@@ -232,7 +232,6 @@
             }
         },
 
-
         "/api/posts": {
             "get": {
                 "tags": [
@@ -342,18 +341,104 @@
                 "tags": [
                     "Posts"
                 ],
-                "summary": "lista de posts",
-                "description": "Returns a list of posts",
-                "operationId": "putPosts",
+                "summary": "Atualizar Post",
+                "operationId": "75a119bd9d0023e90ac8feb22bf59575",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "user_id": {
+                                                "type": "number"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "content": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "user_id": 1,
+                                    "title": "title",
+                                    "content": "content"
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "user_id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title "
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "example": "content"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "400": {
-                        "description": "Bad request"
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             },
+
             "delete": {
                 "tags": [
                     "Posts"
@@ -388,35 +473,172 @@
                     }
                 }
             },
+
             "post": {
                 "tags": [
                     "Tags"
                 ],
-                "summary": "Criar Tags",
-                "description": "Tags Criado com Sucesso",
-                "operationId": "TagsList",
+              
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "number"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": 1,
+                                    "name": "name"
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "name",
+                                            "example": "name tag"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "400": {
-                        "description": "Bad request"
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
+          
             },
-            "put": {
+              "put": {
                 "tags": [
                     "Tags"
                 ],
-                "summary": "Editar Tags",
-                "description": "Returns a list of tags",
-                "operationId": "getTagsList",
+                "summary": "Atualizar Tags",
+                "operationId": "75a119bd9d0023e90ac8feb22bf59575",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "number"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "id": 1,
+                                    "name": "name"
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "name",
+                                            "example": "name tag"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "400": {
-                        "description": "Bad request"
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             },
