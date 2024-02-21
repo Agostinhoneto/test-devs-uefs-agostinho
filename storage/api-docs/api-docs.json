@@ -26,9 +26,9 @@
                 "tags": [
                     "Users"
                 ],
-                "summary": "Get list of users",
-                "description": "Returns a list of users",
-                "operationId": "getUsersList",
+                "summary": "Criar usários",
+                "description": "Usuarios Criados com sucesso",
+                "operationId": "postUsersStore",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -42,9 +42,9 @@
                 "tags": [
                     "Users"
                 ],
-                "summary": "Get list of users",
-                "description": "Returns a list of users",
-                "operationId": "getUsersList",
+                "summary": "Editar Usuários",
+                "description": "Editado com sucesso",
+                "operationId": "putUsersEdit",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -58,9 +58,9 @@
                 "tags": [
                     "Users"
                 ],
-                "summary": "Get list of users",
-                "description": "Returns a list of users",
-                "operationId": "getUsersList",
+                "summary": "Deletar Usuários",
+                "description": "Usuários deletados com sucesso",
+                "operationId": "deleteUsers",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -96,7 +96,7 @@
                 ],
                 "summary": "Get list of posts",
                 "description": "Returns a list of posts",
-                "operationId": "getPostsList",
+                "operationId": "postUsersStore",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -112,7 +112,7 @@
                 ],
                 "summary": "Get list of posts",
                 "description": "Returns a list of posts",
-                "operationId": "getPostsList",
+                "operationId": "putPosts",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -126,9 +126,9 @@
                 "tags": [
                     "Posts"
                 ],
-                "summary": "Get list of posts",
-                "description": "Returns a list of posts",
-                "operationId": "getPostsList",
+                "summary": "deletar posts",
+                "description": "posts deletado com sucesso",
+                "operationId": "delete",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -162,8 +162,8 @@
                     "Tags"
                 ],
                 "summary": "Criar Tags",
-                "description": "Returns a list of tags",
-                "operationId": "getTagsList",
+                "description": "Tags Criado com Sucesso",
+                "operationId": "TagsList",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
