@@ -102,8 +102,7 @@ Tags.
  - php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
  - php artisan l5-swagger:generate
 
-
-1. (http://127.0.0.1:8000/api/documentation)
+## 6 (http://127.0.0.1:8000/api/documentation) // Swagger com todos os Endpoints.
 
 
 

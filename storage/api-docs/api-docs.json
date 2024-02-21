@@ -214,59 +214,6 @@
                     }
                 }
             },
-               "/api/todo/get/{id}": {
-            "get": {
-                "tags": [
-                    "ToDo"
-                ],
-                "summary": "Get Detail Todo",
-                "operationId": "79780d7a6536643763e964e20fb983ab",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "id": {
-                                            "type": "number",
-                                            "example": 1
-                                        },
-                                        "title": {
-                                            "type": "string",
-                                            "example": "title"
-                                        },
-                                        "content": {
-                                            "type": "string",
-                                            "example": "content"
-                                        },
-                                        "updated_at": {
-                                            "type": "string",
-                                            "example": "2021-12-11T09:25:53.000000Z"
-                                        },
-                                        "created_at": {
-                                            "type": "string",
-                                            "example": "2021-12-11T09:25:53.000000Z"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
             "delete": {
                 "tags": [
                     "Users"
@@ -284,12 +231,14 @@
                 }
             }
         },
+
+
         "/api/posts": {
             "get": {
                 "tags": [
                     "Posts"
                 ],
-                "summary": "Get list of posts",
+                "summary": "Retorna todos os posts",
                 "description": "Returns a list of posts",
                 "operationId": "getPostsList",
                 "responses": {
@@ -301,19 +250,91 @@
                     }
                 }
             },
+
             "post": {
                 "tags": [
                     "Posts"
                 ],
-                "summary": "Get list of posts",
-                "description": "Returns a list of posts",
-                "operationId": "postUsersStore",
+                "summary": "Criar Posts",
+                "operationId": "75a119bd9d0023e90ac8feb22bf59575",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "user_id": {
+                                                "type": "number"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "content": {
+                                                "type": "string"
+                                            }                                           
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "user_id": 1,
+                                    "title": "example title",
+                                    "content": "teste content"
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
-                        "description": "Successful operation"
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "user_id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "title": {
+                                            "type": "string",
+                                            "example": "title teste"
+                                        },
+                                        "content": {
+                                            "type": "string",
+                                            "example": "teste content"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11T09:25:53.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     },
                     "400": {
-                        "description": "Bad request"
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             },
@@ -321,7 +342,7 @@
                 "tags": [
                     "Posts"
                 ],
-                "summary": "Get list of posts",
+                "summary": "lista de posts",
                 "description": "Returns a list of posts",
                 "operationId": "putPosts",
                 "responses": {
