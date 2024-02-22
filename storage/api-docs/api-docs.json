@@ -461,7 +461,7 @@
                 "tags": [
                     "Tags"
                 ],
-                "summary": "Get list of tags",
+                "summary": "Listar tags",
                 "description": "Returns a list of tags",
                 "operationId": "getTagsList",
                 "responses": {
@@ -646,9 +646,9 @@
                 "tags": [
                     "Tags"
                 ],
-                "summary": "Criar Tags",
-                "description": "Returns a list of tags",
-                "operationId": "getTagsList",
+                "summary": "Deletar Tags",
+                "description": "Tags deletada com sucesso  ",
+                "operationId": "deleteTags",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
