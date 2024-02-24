@@ -42,10 +42,9 @@ class TagController extends Controller
         }
     }
 
-    public function store(StoreTagRequest $request)
+    public function store(Request $request)
     {
         $result['data'] = $this->tagService->createTag(
-            $request->id,
             $request->name,
         );
         return response()->json([Messages::SAVE_MESSAGE, HttpStatusCodes::OK, $result]);
