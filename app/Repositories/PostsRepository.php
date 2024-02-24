@@ -12,7 +12,8 @@ class PostsRepository
 
     public function getAll()
     {
-        return Post::all();
+        $posts = Post::with('tags')->get();
+        return $posts;
     }
 
     public function getPostById($id)
