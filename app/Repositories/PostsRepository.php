@@ -7,9 +7,6 @@ use App\Models\Post;
 
 class PostsRepository
 {
-
-    private $post;
-
     public function getAll()
     {
         $posts = Post::with('tags')->get();
