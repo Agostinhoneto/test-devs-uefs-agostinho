@@ -55,7 +55,7 @@ class PostController extends Controller
         return response()->json([Messages::SAVE_MESSAGE, HttpStatusCodes::OK, $result]);
     }
 
-    public function update(Request $request)
+    public function update(StorePostRequest $request)
     {      
         DB::beginTransaction();
         try {
