@@ -42,7 +42,7 @@ class TagController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(StoreTagRequest $request)
     {
         $result['data'] = $this->tagService->createTag(
             $request->name,
@@ -50,7 +50,7 @@ class TagController extends Controller
         return response()->json([Messages::SAVE_MESSAGE, HttpStatusCodes::OK, $result]);
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreTagRequest $request)
     {
         try {
             $result['data'] = $this->tagService->updateTag(
@@ -65,7 +65,6 @@ class TagController extends Controller
 
     public function destroy($id)
     {
-        $result = ['status' => 200];
         try {
             $result['data'] = $this->tagService->destroy($id);
             return response()->json([Messages::DELETE_MESSAGE, HttpStatusCodes::OK, $result]);
