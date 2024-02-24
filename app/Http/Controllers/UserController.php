@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\HttpStatusCodes;
 use App\Helpers\Messages;
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Services\UsersService;
 use Exception;
 
@@ -50,7 +51,7 @@ class UserController extends Controller
         return response()->json([Messages::SAVE_MESSAGE, HttpStatusCodes::OK, $result]);
     }
 
-    public function update(StoreUserRequest $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
         $result['data'] = $this->userService->updateUser(
             $request->id,
