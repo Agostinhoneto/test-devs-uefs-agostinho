@@ -24,15 +24,9 @@ class TagsService
 
     public function getById($id)
     {
-        return $this->tagsRepository
-            ->getById($id);
-    }
-
-    public function getUserById($id)
-    {
         return $this->tagsRepository->getById($id);
     }
-
+    
     public function createTag($name)
     {
         DB::beginTransaction();

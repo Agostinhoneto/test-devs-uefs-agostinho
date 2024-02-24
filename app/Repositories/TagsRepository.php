@@ -17,7 +17,6 @@ class TagsRepository
     {
         return Tag::findOrFail($id);
     }
-
     
     public function salvar($name)
     {

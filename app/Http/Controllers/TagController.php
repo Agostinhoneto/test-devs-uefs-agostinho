@@ -33,7 +33,7 @@ class TagController extends Controller
     public function show($id)
     {
         try {
-            if (empty($id)) {
+            if (!empty($id)) {
                 $result['data'] = $this->tagService->getById($id);
                 return response()->json([Messages::SUCCESS_MESSAGE, HttpStatusCodes::OK, $result]);
             }
