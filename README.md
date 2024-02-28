@@ -88,11 +88,13 @@ Tags.
 - Composer
 - MySQL ou outro banco de dados suportado pelo Laravel
 
-## 
+4.1 **Rodando todas as classes dos testes Users,Posts e Tags:**
 
-1. **Rodando todas as classes dos testes Users,Posts e Tags:**
+4.2 ** Limpar o Banco de Dados e rodar novamente os seeders :**
 
-# .\vendor\bin\phpunit
+- php artisan migrate:fresh
+- php artisan db:seed
+- .\vendor\bin\phpunit
 
 
 ## 5 Guia para acessar o Swagger e instalação.
