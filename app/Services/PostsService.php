@@ -5,8 +5,6 @@ namespace App\Services;
 use App\Repositories\PostsRepository;
 use Exception;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-use InvalidArgumentException;
 
 class PostsService
 {

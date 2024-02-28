@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\User;
 use App\Repositories\UsersRepository;
 use Exception;
 use Illuminate\Support\Facades\DB;
