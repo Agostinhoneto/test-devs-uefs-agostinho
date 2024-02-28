@@ -5,6 +5,8 @@ namespace App\Services;
 use App\Repositories\PostsRepository;
 use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use InvalidArgumentException;
 
 class PostsService
 {
@@ -62,7 +64,8 @@ class PostsService
             DB::commit();
         } catch (Exception $e) {
             DB::rollback();
-            throw new \Exception($e);
+            Log::info($e->getMessage());
+            throw new InvalidArgumentException('Não pode ser deletado');
         }
         return $post;
     }
