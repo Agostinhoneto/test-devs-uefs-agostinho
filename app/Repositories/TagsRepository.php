@@ -6,8 +6,6 @@ use App\Models\Tag;
 
 class TagsRepository
 {
-    private $tag;
-
     public function getAll()
     {
         return Tag::all();
